@@ -48,12 +48,20 @@ To make the app work, you need to set up the database using Supabase.
 You need to connect your local app to your Supabase project.
 
 1. Create a `.env.local` file in the root of the project.
-2. Open `.env.example` to see the required keys. Copy its contents into `.env.local`.
+2. Add the following environment variables to `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+````
+
 3. In your Supabase dashboard, go to **Project Settings -> API**.
-4. Fill in the values in your `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase Project URL.
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase `anon` / `public` key.
-   - `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase `service_role` key (keep this secret!).
+4. Replace the placeholder values with your actual Supabase credentials:
+
+   * `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase Project URL.
+   * `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase `anon` / `public` key.
+   * `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase `service_role` key (keep this secret!).
 
 ## Running the Application (Frontend and Backend)
 
