@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --orbit-bg: #050813;
+  --orbit-surface: #0b1020;
+  --orbit-line: rgba(255, 255, 255, 0.08);
+  --orbit-text: #ecf3ff;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(76, 111, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 20% 20%, rgba(90, 218, 255, 0.08), transparent 24%),
+    linear-gradient(180deg, #091122 0%, #050813 58%, #02040b 100%);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: transparent;
+  color: var(--orbit-text);
+  font-family: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1.2px),
+    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1.2px),
+    radial-gradient(circle at 36% 78%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1.2px),
+    radial-gradient(circle at 64% 62%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1.2px);
+  opacity: 0.9;
+}
+
+.orbit-scrollbar {
+  scrollbar-width: none;
+}
+
+.orbit-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Onboarding hint animations ───────────────────────────────── */
+
+@keyframes hint-horizontal {
+  0%, 100% { transform: translateX(-24px); opacity: 0.5; }
+  50% { transform: translateX(24px); opacity: 1; }
+}
+
+@keyframes hint-up {
+  0%, 100% { transform: translateY(18px); opacity: 0.5; }
+  50% { transform: translateY(-28px); opacity: 1; }
+}
+
+@keyframes hint-down {
+  0%, 100% { transform: translateY(-18px); opacity: 0.5; }
+  50% { transform: translateY(28px); opacity: 1; }
+}
+
+@keyframes hint-tap {
+  0%, 100% { transform: scale(1) translateY(0); }
+  30% { transform: scale(0.85) translateY(6px); }
+  50% { transform: scale(1.1) translateY(-4px); }
+}
+
+@keyframes hint-double-tap {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  15% { transform: scale(0.8); opacity: 1; }
+  30% { transform: scale(1.05); opacity: 1; }
+  45% { transform: scale(0.8); opacity: 1; }
+  60% { transform: scale(1.1); opacity: 1; }
+  75% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes confirm-flash {
+  0% { transform: scale(0.5); opacity: 0; }
+  40% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.onboarding-hint-horizontal {
+  animation: hint-horizontal 1.6s ease-in-out infinite;
+}
+
+.onboarding-hint-up {
+  animation: hint-up 1.4s ease-in-out infinite;
+}
+
+.onboarding-hint-down {
+  animation: hint-down 1.4s ease-in-out infinite;
+}
+
+.onboarding-hint-tap {
+  animation: hint-tap 1.5s ease-in-out infinite;
+}
+
+.onboarding-hint-double-tap {
+  animation: hint-double-tap 2s ease-in-out infinite;
+}
+
+.onboarding-confirm-flash {
+  animation: confirm-flash 0.9s ease-out forwards;
+}
