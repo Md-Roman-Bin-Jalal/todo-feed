@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository** (if using git) or download the project folder.
 2. **Navigate to the project directory**:
    ```bash
-   cd your=project-root
+   cd your-project-root
    ```
 3. **Install dependencies**:
    ```bash
