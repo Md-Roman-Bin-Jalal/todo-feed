@@ -6,7 +6,9 @@ Orbit-themed, mobile-first, and highly interactive task management application. 
 ORBIT provides an intuitive and gamified way to manage daily tasks. Instead of standard lists, tasks orbit an oval path. Users can swipe to complete tasks (with satisfying banish animations), long-press and drag them to the edge to delete, or double-tap to edit. The application features a fully working full-stack architecture, utilizing Supabase for authentication and a RESTful API.
 
 ## Live Demo
-🚀 **[Click here to view the live application](https://todofeed.vercel.app/)**
+**[Click here to view the live application](https://todofeed.vercel.app/)**
+
+**(The web app is mobile-focused, so using a mobile device is Highly recommended for the best experience.)**
 
 ## Tech Stack Used
 - **Frontend**: Next.js (React), Tailwind CSS, Framer Motion (for high-fidelity animations)
